@@ -2,14 +2,6 @@ require "net/http"
 require "uri"
 
 class Scraper
-  def initialize(url)
-    @url = url
-  end
-
-  def url
-    @url
-  end
-
   def grab(url, limit: 5, timeout: 10)
     raise ArgumentError, "リダイレクトが多すぎます: #{url}" if limit <= 0
 
